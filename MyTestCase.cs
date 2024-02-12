@@ -10,11 +10,14 @@ namespace NUINT
     [TestFixture]
     internal class MyTestCase
     {
-        [TestCase]
-        public void Add()
+        [Test]
+        [TestCase(8,3,5)]
+        [TestCase(31,20,11)]
+        [TestCase(10,6,4)]
+        public void Add(int a, int b, int c)
         {
             NunitDemo demo= new NunitDemo();
-            Assert.That(31, Is.EqualTo (demo.Add(20, 11)));
+            Assert.That(a, Is.EqualTo (demo.Add(b, c)));
         }
 
         [TestCase]
